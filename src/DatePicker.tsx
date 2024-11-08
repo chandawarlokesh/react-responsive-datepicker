@@ -78,7 +78,7 @@ const DatePicker = ({
     monthNames?.length === 12 ? monthNames : MONTH_NAMES
   )
   const [month, setMonth] = React.useState<number>(0)
-  const [year, setYear] = React.useState<number>(2022)
+  const [year, setYear] = React.useState<number>(0)
   const [selectedDate, setSelectedDate] = React.useState<Date | null>(
     defaultValue || null
   )
@@ -185,9 +185,11 @@ const DatePicker = ({
     if (defaultValue) {
       if (defaultValue.getTime() < minDate.getTime()) {
         setMonth(minDate.getMonth())
+        setYear(minDate.getFullYear())
         setSelectedDate(minDate)
       } else {
         setMonth(defaultValue.getMonth())
+        setYear(defaultValue.getFullYear())
       }
     }
   }, [])

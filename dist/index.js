@@ -54,7 +54,7 @@ var DatePicker = function DatePicker(_ref) {
       month = _React$useState5[0],
       setMonth = _React$useState5[1];
 
-  var _React$useState6 = React.useState(2022),
+  var _React$useState6 = React.useState(0),
       year = _React$useState6[0],
       setYear = _React$useState6[1];
 
@@ -156,7 +156,6 @@ var DatePicker = function DatePicker(_ref) {
       }
     });
   }, []);
-
   React.useEffect(function () {
     if (defaultValue) {
       if (defaultValue.getTime() < minDate.getTime()) {
@@ -169,7 +168,6 @@ var DatePicker = function DatePicker(_ref) {
       }
     }
   }, []);
-
   React.useEffect(function () {
     setIsOpen(showCalendar);
   }, [showCalendar]);
